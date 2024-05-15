@@ -1,0 +1,17 @@
+CREATE TABLE [Tag] (
+[Id] int not null IDENTITY(1,1),
+[Name] NVARCHAR(80) NOT NULL,
+[Slug] VARCHAR(80) NOT NULL,
+
+CONSTRAINT [PK_Tag] PRIMARY KEY([Id]),
+CONSTRAINT [UQ_Tag_Slug] UNIQUE([Slug])
+
+)
+
+CREATE NONCLUSTERED INDEX [IX_Tag_Slug] ON [Tag]([Slug])
+
+CREATE TABLE [PostTag](
+    [PostId] INT NOT NULL,
+    [TagId] INT NOT NULL,
+    CONSTRAINT [PK_PostTag] PRIMARY KEY([PostId],[TagId]),
+)

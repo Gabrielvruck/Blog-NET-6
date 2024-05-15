@@ -16,6 +16,8 @@ namespace Blog.Models
         public string Image { get; set; }
         public string Slug { get; set; }
 
+        public string RolesString { get; set; }
+
         //para não escrever isso no insert
         [Write(false)]
         public List<Role> Roles { get; set; }
